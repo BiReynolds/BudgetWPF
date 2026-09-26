@@ -1,0 +1,185 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\brrii\\Projects\\BudgetWPF\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|c:\\users\\brrii\\projects\\budgetwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|c:\\users\\brrii\\projects\\budgetwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|c:\\users\\brrii\\projects\\budgetwpf\\themes\\generic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|solutionrelative:themes\\generic.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|c:\\users\\brrii\\projects\\budgetwpf\\screens\\screenenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|solutionrelative:screens\\screenenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|c:\\users\\brrii\\projects\\budgetwpf\\screens\\dashboardscreen\\dashboardscreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|solutionrelative:screens\\dashboardscreen\\dashboardscreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|c:\\users\\brrii\\projects\\budgetwpf\\screens\\manageindividualbillsscreen\\manageindividualbillsscreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|solutionrelative:screens\\manageindividualbillsscreen\\manageindividualbillsscreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|c:\\users\\brrii\\projects\\budgetwpf\\screens\\manageindividualbillsscreen\\manageindividualbillsscreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|solutionrelative:screens\\manageindividualbillsscreen\\manageindividualbillsscreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|c:\\users\\brrii\\projects\\budgetwpf\\screens\\managerecurringbillsscreen\\managerecurringbillsscreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|solutionrelative:screens\\managerecurringbillsscreen\\managerecurringbillsscreen.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|c:\\users\\brrii\\projects\\budgetwpf\\screens\\managerecurringbillsscreen\\managerecurringbillsscreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|solutionrelative:screens\\managerecurringbillsscreen\\managerecurringbillsscreen.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|c:\\users\\brrii\\projects\\budgetwpf\\budgetwpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{62838B9A-D2D9-C09D-074F-33A6A2EA9438}|BudgetWPF.csproj|solutionrelative:budgetwpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DashboardScreen.xaml",
+              "DocumentMoniker": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\DashboardScreen\\DashboardScreen.xaml",
+              "RelativeDocumentMoniker": "Screens\\DashboardScreen\\DashboardScreen.xaml",
+              "ToolTip": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\DashboardScreen\\DashboardScreen.xaml",
+              "RelativeToolTip": "Screens\\DashboardScreen\\DashboardScreen.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-09-24T23:25:56.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ManageRecurringBillsScreen.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\ManageRecurringBillsScreen\\ManageRecurringBillsScreen.xaml.cs",
+              "RelativeDocumentMoniker": "Screens\\ManageRecurringBillsScreen\\ManageRecurringBillsScreen.xaml.cs",
+              "ToolTip": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\ManageRecurringBillsScreen\\ManageRecurringBillsScreen.xaml.cs",
+              "RelativeToolTip": "Screens\\ManageRecurringBillsScreen\\ManageRecurringBillsScreen.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T23:23:32.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ManageRecurringBillsScreen.xaml",
+              "DocumentMoniker": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\ManageRecurringBillsScreen\\ManageRecurringBillsScreen.xaml",
+              "RelativeDocumentMoniker": "Screens\\ManageRecurringBillsScreen\\ManageRecurringBillsScreen.xaml",
+              "ToolTip": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\ManageRecurringBillsScreen\\ManageRecurringBillsScreen.xaml",
+              "RelativeToolTip": "Screens\\ManageRecurringBillsScreen\\ManageRecurringBillsScreen.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-09-24T23:23:24.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\brrii\\Projects\\BudgetWPF\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\brrii\\Projects\\BudgetWPF\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA5wB4AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T23:22:25.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManageIndividualBillsScreen.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\ManageIndividualBillsScreen\\ManageIndividualBillsScreen.xaml.cs",
+              "RelativeDocumentMoniker": "Screens\\ManageIndividualBillsScreen\\ManageIndividualBillsScreen.xaml.cs",
+              "ToolTip": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\ManageIndividualBillsScreen\\ManageIndividualBillsScreen.xaml.cs",
+              "RelativeToolTip": "Screens\\ManageIndividualBillsScreen\\ManageIndividualBillsScreen.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T23:17:30.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\brrii\\Projects\\BudgetWPF\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\brrii\\Projects\\BudgetWPF\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-09-24T23:16:13.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ScreenEnum.cs",
+              "DocumentMoniker": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\ScreenEnum.cs",
+              "RelativeDocumentMoniker": "Screens\\ScreenEnum.cs",
+              "ToolTip": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\ScreenEnum.cs",
+              "RelativeToolTip": "Screens\\ScreenEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-24T23:31:13.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Generic.xaml",
+              "DocumentMoniker": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Themes\\Generic.xaml",
+              "RelativeDocumentMoniker": "Themes\\Generic.xaml",
+              "ToolTip": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Themes\\Generic.xaml",
+              "RelativeToolTip": "Themes\\Generic.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-09-24T23:34:21.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ManageIndividualBillsScreen.xaml",
+              "DocumentMoniker": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\ManageIndividualBillsScreen\\ManageIndividualBillsScreen.xaml",
+              "RelativeDocumentMoniker": "Screens\\ManageIndividualBillsScreen\\ManageIndividualBillsScreen.xaml",
+              "ToolTip": "C:\\Users\\brrii\\Projects\\BudgetWPF\\Screens\\ManageIndividualBillsScreen\\ManageIndividualBillsScreen.xaml",
+              "RelativeToolTip": "Screens\\ManageIndividualBillsScreen\\ManageIndividualBillsScreen.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-09-24T23:13:28.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BudgetWPF",
+              "DocumentMoniker": "C:\\Users\\brrii\\Projects\\BudgetWPF\\BudgetWPF.csproj",
+              "RelativeDocumentMoniker": "BudgetWPF.csproj",
+              "ToolTip": "C:\\Users\\brrii\\Projects\\BudgetWPF\\BudgetWPF.csproj",
+              "RelativeToolTip": "BudgetWPF.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-24T23:18:16.318Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
