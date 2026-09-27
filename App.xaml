@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:BudgetWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="HeaderStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="48"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

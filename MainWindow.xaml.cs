@@ -2,6 +2,7 @@
 using BudgetWPF.Screens.DashboardScreen;
 using BudgetWPF.Screens.ManageIndividualBillsScreen;
 using BudgetWPF.Screens.ManageRecurringBillsScreen;
+using BudgetWPF.Screens.AddBillScreen;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,6 +44,11 @@ public partial class MainWindow : Window
         ChangeScreen(ScreenEnum.ManageRecurringBills);
     }
 
+    private void AddBillButton_Click(object sender, RoutedEventArgs e)
+    {
+        ChangeScreen(ScreenEnum.AddBillScreen);
+    }
+
     private void ChangeScreen(ScreenEnum nextScreen)
     {
         if (CurrentScreen == nextScreen)
@@ -62,6 +68,9 @@ public partial class MainWindow : Window
                 break;
             case ScreenEnum.ManageRecurringBills:
                 MainContentContainer.Children.Add(new ManageRecurringBillsScreen());
+                break;
+            case ScreenEnum.AddBillScreen:
+                MainContentContainer.Children.Add(new AddBillScreen());
                 break;
             default:
                 throw new Exception($"Screen {nextScreen} is not supported by ChangeScreen method");

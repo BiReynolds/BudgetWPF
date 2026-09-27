@@ -53,3 +53,11 @@ C:\Users\brrii\Projects\BudgetWPF\bin\Debug\net10.0-windows\runtimes\win-arm64\n
 C:\Users\brrii\Projects\BudgetWPF\bin\Debug\net10.0-windows\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\brrii\Projects\BudgetWPF\bin\Debug\net10.0-windows\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\brrii\Projects\BudgetWPF\obj\Debug\net10.0-windows\BudgetWPF.csproj.AssemblyReference.cache
+C:\Users\brrii\Projects\BudgetWPF\obj\Debug\net10.0-windows\Screens\AddBillScreen\AddBillScreen.g.cs
+C:\Users\brrii\Projects\BudgetWPF\obj\Debug\net10.0-windows\Screens\AddBillScreen\OneTimeBillFields.g.cs
+C:\Users\brrii\Projects\BudgetWPF\obj\Debug\net10.0-windows\Screens\AddBillScreen\RecurringBillFields.g.cs
+C:\Users\brrii\Projects\BudgetWPF\obj\Debug\net10.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\brrii\Projects\BudgetWPF\obj\Debug\net10.0-windows\App.baml
+C:\Users\brrii\Projects\BudgetWPF\obj\Debug\net10.0-windows\Screens\AddBillScreen\AddBillScreen.baml
+C:\Users\brrii\Projects\BudgetWPF\obj\Debug\net10.0-windows\Screens\AddBillScreen\OneTimeBillFields.baml
+C:\Users\brrii\Projects\BudgetWPF\obj\Debug\net10.0-windows\Screens\AddBillScreen\RecurringBillFields.baml

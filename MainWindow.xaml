@@ -15,6 +15,7 @@
             <Button Name="DashboardButton" Click="DashboardButton_Click" Height="200">Dashboard</Button>
             <Button Name="ManageIndividualBillsButton" Click="ManageIndividualBillsButton_Click" Height="200">Manage Individual Bills</Button>
             <Button Name="ManageRecurringBillsButton" Click="ManageRecurringBillsButton_Click" Height="200">Manage Recurring Bills</Button>
+            <Button Name="AddBillButton" Click="AddBillButton_Click" Height="200">Add Bill or Income</Button>
         </StackPanel>
         <Canvas Grid.Column="1" Name="MainContentContainer"></Canvas>
     </Grid>

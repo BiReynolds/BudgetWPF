@@ -4,7 +4,7 @@ namespace BudgetWPF.Data.Models
     {
         public event EventHandler? RecurringBillChanged;
         public int? Id { get; private set; }
-        public bool IsDeleted { get; set; } = false;
+        public bool IsDeleted { get; private set; } = false;
         public bool IsChanged
         {
             get;
@@ -162,6 +162,11 @@ namespace BudgetWPF.Data.Models
                 default:
                     throw new Exception($"RecurringType {RecurringType} is not supported");
             }
+        }
+
+        public void MarkForDeletion()
+        {
+            IsDeleted = true;
         }
 
         List<OneTimeBillModel> GetNewWeeklyBillInstances(DateOnly endDate)

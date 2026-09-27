@@ -4,7 +4,7 @@ namespace BudgetWPF.Data.Models
     {
         public event EventHandler? OneTimeBillModelChanged;
         public int? ParentId { get; private set; }
-        public bool IsDeleted { get; set; } = false;
+        public bool IsDeleted { get; private set; } = false;
         public bool IsChanged { 
             get; 
             private set
@@ -89,6 +89,11 @@ namespace BudgetWPF.Data.Models
             DueDate = dueDate;
             IsPaid = isPaid;
             ParentId = parentId;
+        }
+
+        public void MarkForDeletion()
+        {
+            IsDeleted = true;
         }
 
         public override string ToString()

@@ -2,6 +2,15 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Screens\AddBillScreen\AddBillScreen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Screens\AddBillScreen\OneTimeBillFields.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Screens\AddBillScreen\RecurringBillFields.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Screens\DashboardScreen\DashboardScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
