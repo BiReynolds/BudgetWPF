@@ -1,5 +1,6 @@
 ﻿using BudgetWPF.Data.Models;
 using BudgetWPF.Resources;
+using BudgetWPF.Resources.Validation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,7 @@ namespace BudgetWPF.Screens.AddBillScreen
     /// </summary>
     public partial class AddBillScreen : UserControl
     {
+        decimal InputAmount;
         public AddBillScreen()
         {
             InitializeComponent();
@@ -39,6 +41,21 @@ namespace BudgetWPF.Screens.AddBillScreen
                 OneTimeBillFieldData.Collapse();
                 RecurringBillFieldData.Show(newSelection.RecurringType);
             }
+        }
+
+        public void Submit_Click(object sender, RoutedEventArgs e)
+        {
+            string message = "Submit clicked with the following data:\n";
+            message += $"Name: {NameTextBox.Text}\n";
+            message += $"Amount: {AmountTextBox.Text}\n";
+            message += $"Bill or Income: {TypeComboBox.SelectedItem}\n";
+            message += $"Recurring Type: {RecurringTypeComboBox.SelectedItem}\n";
+            MessageBox.Show(message);
+        }
+
+        public void AmountTextBox_Preview(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !PreviewTextInputMethods.CurrencyPreview(AmountTextBox.Text, e);
         }
     }
 }

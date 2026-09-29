@@ -27,7 +27,8 @@
             <Label Grid.Column="0" Grid.Row="2">Recurs...</Label>
             <!-- Fields -->
             <TextBox Name="NameTextBox" Grid.Column="1" Grid.Row="0" MaxLength="50" Width="200" HorizontalAlignment="Left"></TextBox>
-            <TextBox Name="AmountTextBox" Grid.Column="1" Grid.Row="1" Width="50" HorizontalAlignment="Left"></TextBox>
+            <TextBox Name="AmountTextBox" Grid.Column="1" Grid.Row="1" Width="50" HorizontalAlignment="Left"
+                PreviewTextInput="AmountTextBox_Preview"></TextBox>
             <ComboBox Name="TypeComboBox" Grid.Column="3" Grid.Row="1" Width="100" HorizontalAlignment="Left">
                 <ComboBoxItem>Bill</ComboBoxItem>
                 <ComboBoxItem>Income</ComboBoxItem>
@@ -36,5 +37,6 @@
         </Grid>
         <local:OneTimeBillFields x:Name="OneTimeBillFieldData" Visibility="Collapsed"></local:OneTimeBillFields>
         <local:RecurringBillFields x:Name="RecurringBillFieldData" Visibility="Collapsed"></local:RecurringBillFields>
+        <Button>Submit</Button>
     </StackPanel>
 </UserControl>

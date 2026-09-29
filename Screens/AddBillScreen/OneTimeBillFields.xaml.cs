@@ -38,5 +38,6 @@ namespace BudgetWPF.Screens.AddBillScreen
         {
             OneTime_DueDatePicker.SelectedDate = null;
         }
+
     }
 }
