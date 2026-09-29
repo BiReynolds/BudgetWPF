@@ -21,7 +21,7 @@ namespace BudgetWPF.Screens.AddBillScreen
     /// </summary>
     public partial class AddBillScreen : UserControl
     {
-        decimal InputAmount;
+        public decimal InputAmount;
         public AddBillScreen()
         {
             InitializeComponent();
