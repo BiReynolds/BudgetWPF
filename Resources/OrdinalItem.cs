@@ -14,15 +14,15 @@ namespace BudgetWPF.Resources
 
         public override string ToString()
         {
-            if (Ordinal % 10 == 1)
+            if (Ordinal % 10 == 1 && Ordinal % 100 != 11)
             {
                 return Ordinal.ToString() + "st";
             }
-            else if (Ordinal % 10 == 2)
+            else if (Ordinal % 10 == 2 && Ordinal % 100 != 12)
             {
                 return Ordinal.ToString() + "nd";
             }
-            else if (Ordinal % 10 == 3)
+            else if (Ordinal % 10 == 3 && Ordinal % 100 != 13)
             {
                 return Ordinal.ToString() + "rd";
             }

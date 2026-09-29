@@ -24,7 +24,7 @@ namespace BudgetWPF.Screens.AddBillScreen
         {
             InitializeComponent();
             Recurring_WeeklyDayComboBox.ItemsSource = Enum.GetValues<DayOfWeek>().Select(x => new WeekdayItem(x));
-            Recurring_MonthlyDayComboBox.ItemsSource = Enumerable.Range(1, 29).Select(x => new OrdinalItem(x));
+            Recurring_MonthlyDayComboBox.ItemsSource = Enumerable.Range(1, 28).Select(x => new OrdinalItem(x));
         }
 
         public void Collapse()
