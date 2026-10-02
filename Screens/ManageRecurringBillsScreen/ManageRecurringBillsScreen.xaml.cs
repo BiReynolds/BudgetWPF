@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BudgetWPF.Data;
+using BudgetWPF.Data.Models;
+using Microsoft.Data.Sqlite;
 
 namespace BudgetWPF.Screens.ManageRecurringBillsScreen
 {
@@ -18,9 +21,20 @@ namespace BudgetWPF.Screens.ManageRecurringBillsScreen
     /// </summary>
     public partial class ManageRecurringBillsScreen : UserControl
     {
+        SqliteConnection Connection = DatabaseHelper.GetReadWriteConnection();
+        List<RecurringBillModel>? RecurringBills { get; set; }
         public ManageRecurringBillsScreen()
         {
             InitializeComponent();
+        }
+
+        protected override void OnInitialized(EventArgs e)
+        {
+            base.OnInitialized(e);
+            Connection.Open();
+            RecurringBills = DatabaseHelper.GetAllRecurringBills(Connection);
+            Connection.Close();
+            RecurringBillsDataGrid.ItemsSource = RecurringBills;
         }
     }
 }

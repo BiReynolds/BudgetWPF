@@ -75,5 +75,45 @@ namespace BudgetWPF.Screens.AddBillScreen
             Recurring_StartDatePicker.SelectedDate = null;
             Recurring_EndDatePicker.SelectedDate = null;
         }
+
+        public bool CheckRequiredFields()
+        {
+            if (Recurring_WeeklyDayComboBox.IsVisible && Recurring_WeeklyDayComboBox.SelectedItem == null)
+            {
+                return false;
+            }
+            
+            if (Recurring_MonthlyDayComboBox.IsVisible && Recurring_MonthlyDayComboBox.SelectedItem == null)
+            {
+                return false;
+            }
+
+            if (Recurring_StartDatePicker.SelectedDate == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public DayOfWeek? GetWeekdaySelection()
+        {
+            return FieldHelper.GetComboBoxSelection<WeekdayItem>(Recurring_WeeklyDayComboBox)?.Weekday;
+        }
+
+        public int? GetDayOfMonthSelection()
+        {
+            return FieldHelper.GetComboBoxSelection<OrdinalItem>(Recurring_MonthlyDayComboBox)?.Ordinal;
+        }
+
+        public DateOnly? GetStartDateSelection()
+        {
+            return FieldHelper.GetDatePickerSelection(Recurring_StartDatePicker);
+        }
+
+        public DateOnly? GetEndDateSelection()
+        {
+            return FieldHelper.GetDatePickerSelection(Recurring_EndDatePicker);
+        }
     }
 }

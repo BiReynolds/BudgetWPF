@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace BudgetWPF.Resources.Validation
@@ -10,7 +11,6 @@ namespace BudgetWPF.Resources.Validation
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)
         {
             decimal parsed = 0;
-
             try
             {
                 if (((string)value).Length > 0)

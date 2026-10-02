@@ -17,7 +17,25 @@
             <ColumnDefinition Width="400"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource HeaderStyle}" Grid.Row="0" Grid.ColumnSpan="2">Recurring Bills</TextBlock>
-        <DataGrid Grid.Row="2" Grid.ColumnSpan="2"></DataGrid>
+        <DataGrid Name="RecurringBillsDataGrid" Grid.Row="2" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Bill" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" />
+                <DataGridTextColumn Header="Recurs" Binding="{Binding RecurringType}" />
+                <DataGridTextColumn Header="Start Date" Binding="{Binding StartDate}" />
+                <DataGridTextColumn Header="End Date" Binding="{Binding EndDate}" />
+                <DataGridTemplateColumn Header="Actions">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button>Edit</Button>
+                                <Button>Delete</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </UserControl>

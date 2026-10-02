@@ -30,22 +30,12 @@
             <TextBox Name="NameTextBox" Grid.Column="1" Grid.Row="0" MaxLength="50" Width="200" HorizontalAlignment="Left"></TextBox>
             <TextBox Name="AmountTextBox" Grid.Column="1" Grid.Row="1" Width="50" HorizontalAlignment="Left"
                 Style="{StaticResource TextBoxWithError}" PreviewTextInput="AmountTextBox_Preview">
-                <TextBox.Text>
-                    <Binding Path="InputAmount" UpdateSourceTrigger="PropertyChanged">
-                        <Binding.ValidationRules>
-                            <validation:CurrencyValidationRule/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </TextBox.Text>
             </TextBox>
-            <ComboBox Name="TypeComboBox" Grid.Column="3" Grid.Row="1" Width="100" HorizontalAlignment="Left">
-                <ComboBoxItem>Bill</ComboBoxItem>
-                <ComboBoxItem>Income</ComboBoxItem>
-            </ComboBox>
+            <ComboBox Name="TypeComboBox" Grid.Column="3" Grid.Row="1" Width="100" HorizontalAlignment="Left"></ComboBox>
             <ComboBox Name="RecurringTypeComboBox" Grid.Column="1" Grid.Row="2" Width="200" HorizontalAlignment="Left" SelectionChanged="RecurringTypeComboBox_SelectionChanged"></ComboBox>
         </Grid>
         <local:OneTimeBillFields x:Name="OneTimeBillFieldData" Visibility="Collapsed"></local:OneTimeBillFields>
         <local:RecurringBillFields x:Name="RecurringBillFieldData" Visibility="Collapsed"></local:RecurringBillFields>
-        <Button>Submit</Button>
+        <Button Click="Submit_Click">Submit</Button>
     </StackPanel>
 </UserControl>

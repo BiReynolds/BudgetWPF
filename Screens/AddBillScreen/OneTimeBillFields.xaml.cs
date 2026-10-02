@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BudgetWPF.Resources;
 
 namespace BudgetWPF.Screens.AddBillScreen
 {
@@ -34,10 +35,19 @@ namespace BudgetWPF.Screens.AddBillScreen
             Visibility = Visibility.Visible;
         }
 
-        void ClearFields()
+        public void ClearFields()
         {
             OneTime_DueDatePicker.SelectedDate = null;
         }
 
+        public bool CheckRequiredFields()
+        {
+            return OneTime_DueDatePicker.SelectedDate != null;
+        }
+
+        public DateOnly? GetSelectedDueDate()
+        {
+            return FieldHelper.GetDatePickerSelection(OneTime_DueDatePicker);
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace BudgetWPF.Resources
 {
     internal class WeekdayItem
     {
-        DayOfWeek Weekday;
+        public DayOfWeek Weekday;
         public WeekdayItem(DayOfWeek weekday)
         {
             Weekday = weekday;
