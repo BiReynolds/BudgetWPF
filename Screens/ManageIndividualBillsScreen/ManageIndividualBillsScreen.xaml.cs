@@ -36,5 +36,33 @@ namespace BudgetWPF.Screens.ManageIndividualBillsScreen
             Connection.Close();
             IndividualBillsDataGrid.ItemsSource = IndividualBills;
         }
+
+        protected void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedBills = GetSelectedBills();
+            string message = "";
+            foreach (var bill in selectedBills)
+            {
+                message += bill.Name + "\n";
+            }
+            MessageBox.Show(message);
+        }
+
+        protected List<OneTimeBillModel> GetSelectedBills()
+        {
+            var selections = IndividualBillsDataGrid.SelectedItems;
+            if (selections == null || selections.Count == 0)
+            {
+                return [];
+            }
+
+            List<OneTimeBillModel> result = new();
+            foreach (var selection in selections)
+            {
+                var selectionItem = (OneTimeBillModel)selection;
+                result.Add(selectionItem);
+            }
+            return result;
+        }
     }
 }

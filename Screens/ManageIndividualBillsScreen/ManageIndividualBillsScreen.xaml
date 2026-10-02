@@ -14,25 +14,19 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource HeaderStyle}" Grid.Row="0" Grid.ColumnSpan="2">Individual Bills</TextBlock>
-        <DataGrid Name="IndividualBillsDataGrid" Grid.Row="2" Grid.ColumnSpan="2" AutoGenerateColumns="False" IsReadOnly="True">
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Button Click="Edit_Click">Edit</Button>
+            <Button>Delete</Button>
+        </StackPanel>
+        <DataGrid Name="IndividualBillsDataGrid" Grid.Row="2" Grid.Column="0" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Bill" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" />
                 <DataGridTextColumn Header="Due Date" Binding="{Binding DueDate}" />
                 <DataGridTextColumn Header="IsPaid" Binding="{Binding IsPaid}" />
-                <DataGridTemplateColumn Header="Actions">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Button>Edit</Button>
-                                <Button>Delete</Button>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
