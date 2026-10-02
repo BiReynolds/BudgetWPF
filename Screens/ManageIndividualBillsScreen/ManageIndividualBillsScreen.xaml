@@ -19,7 +19,14 @@
         <TextBlock Style="{StaticResource HeaderStyle}" Grid.Row="0" Grid.ColumnSpan="2">Individual Bills</TextBlock>
         <StackPanel Grid.Row="2" Grid.Column="1">
             <Button Click="Edit_Click">Edit</Button>
-            <Button>Delete</Button>
+            <Button Click="Delete_Click">Delete</Button>
+            <Popup Name="DeleteConfirmationPopup" IsOpen="False">
+                <Canvas>
+                    <TextBlock Canvas.Top="10" Canvas.Left="10" Name="DeleteConfirmationPopupVerbiage"></TextBlock>
+                    <Button Canvas.Top="40" Canvas.Left = "10">Yes</Button>
+                    <Button Canvas.Top="40" Canvas.Left="60">No</Button>
+                </Canvas>
+            </Popup>
         </StackPanel>
         <DataGrid Name="IndividualBillsDataGrid" Grid.Row="2" Grid.Column="0" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>

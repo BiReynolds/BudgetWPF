@@ -40,12 +40,31 @@ namespace BudgetWPF.Screens.ManageIndividualBillsScreen
         protected void Edit_Click(object sender, RoutedEventArgs e)
         {
             var selectedBills = GetSelectedBills();
-            string message = "";
-            foreach (var bill in selectedBills)
+            if (selectedBills.Count == 0)
             {
-                message += bill.Name + "\n";
+                MessageBox.Show("Please select a bill for editing");
             }
-            MessageBox.Show(message);
+            else if (selectedBills.Count > 1)
+            {
+                MessageBox.Show("Only one bill can be edited at a time");
+            }
+            else
+            {
+
+            }
+        }
+
+        protected void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedBills = GetSelectedBills();
+            if (selectedBills.Count == 0)
+            {
+                MessageBox.Show("Please select a bill to delete");
+            }
+            else
+            {
+                DeleteConfirmationPopup.IsOpen = true;
+            }
         }
 
         protected List<OneTimeBillModel> GetSelectedBills()
