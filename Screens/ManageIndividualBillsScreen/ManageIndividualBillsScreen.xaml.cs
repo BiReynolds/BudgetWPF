@@ -4,8 +4,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+using System.Windows.Data; using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -39,6 +38,38 @@ namespace BudgetWPF.Screens.ManageIndividualBillsScreen
             IndividualBillsDataGrid.ItemsSource = IndividualBills;
         }
 
+        protected void TogglePaid_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedBills = GetSelectedBills();
+            if (selectedBills.Count == 0)
+            {
+                MessageBox.Show("Please select a bill to toggle as paid/unpaid");
+            }
+            else if (selectedBills.Count == 1)
+            {
+                selectedBills[0].TogglePaid();
+                Connection.Open();
+                DatabaseHelper.UpdateOneTimeBill(selectedBills[0], Connection);
+                Connection.Close();
+            }
+            else
+            {
+                string message = GetTogglePaidConfirmationMessage(selectedBills);
+                MessageBoxResult result = MessageBox.Show(message, "Confirm Toggle Paid", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    foreach (OneTimeBillModel bill in selectedBills)
+                    {
+                        bill.TogglePaid();
+                    }
+                    Connection.Open();
+                    DatabaseHelper.UpdateManyOneTimeBills(selectedBills, Connection);
+                    Connection.Close();
+                }
+            }
+            IndividualBillsDataGrid.UnselectAll();
+        }
+
         protected void Edit_Click(object sender, RoutedEventArgs e)
         {
             var selectedBills = GetSelectedBills();
@@ -54,6 +85,7 @@ namespace BudgetWPF.Screens.ManageIndividualBillsScreen
             {
 
             }
+            IndividualBillsDataGrid.UnselectAll();
         }
 
         protected void Delete_Click(object sender, RoutedEventArgs e)
@@ -65,7 +97,7 @@ namespace BudgetWPF.Screens.ManageIndividualBillsScreen
             }
             else
             {
-                string deleteConfirmationVerbiage = GetDeleteConfirmationMessageFromSelectedBills(selectedBills);
+                string deleteConfirmationVerbiage = GetDeleteConfirmationMessage(selectedBills);
                 MessageBoxResult result = MessageBox.Show(deleteConfirmationVerbiage, "Confirm Delete", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
@@ -95,11 +127,37 @@ namespace BudgetWPF.Screens.ManageIndividualBillsScreen
             return result;
         }
 
-        protected string GetDeleteConfirmationMessageFromSelectedBills(List<OneTimeBillModel> selectedBills)
+        protected string GetTogglePaidConfirmationMessage(List<OneTimeBillModel> selectedBills)
+        {
+            if (selectedBills.Count <= 1)
+            {
+                throw new Exception("Should not pass empty collection or singleton to GetTogglePaidConfirmationMessage");
+            }
+            else if (selectedBills.Count <= 10)
+            {
+                string message = $"Are you sure you want to toggle {selectedBills.Count} bills listed below as paid / unpaid?";
+                foreach (OneTimeBillModel bill in selectedBills)
+                {
+                    message += $"\n{bill.Name}";
+                }
+                return message;
+            }
+            else
+            {
+                string message = $"Are you sure you wnat to toggle {selectedBills.Count} bills as paid / unpaid (first 10 are listed below)";
+                for (int i = 0; i < 10; i++)
+                {
+                    message += $"\n{selectedBills[i].Name}";
+                }
+                return message;
+            }
+        }
+
+        protected string GetDeleteConfirmationMessage(List<OneTimeBillModel> selectedBills)
         {
             if (selectedBills.Count == 0)
             {
-                return "none"; // shouldn't happen
+                throw new Exception("Should not pass empty collection to GetDeleteConfirmationMessage");
             }
             else if (selectedBills.Count == 1)
             {

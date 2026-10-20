@@ -1,21 +1,14 @@
+using System.ComponentModel;
+
 namespace BudgetWPF.Data.Models
 {
-    public class OneTimeBillModel
+    public class OneTimeBillModel : INotifyPropertyChanged
     {
-        public event EventHandler? OneTimeBillModelChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         public int? ParentId { get; private set; }
-        public bool IsDeleted { get; private set; } = false;
-        public bool IsChanged { 
-            get; 
-            private set
-            {
-                field = value;
-                if (field)
-                {
-                    OnOneTimeBillModelChanged(EventArgs.Empty);
-                }
-            }
-        } = false;
+        public bool IsDeleted { get; set; } = false;
+        public bool IsChanged { get; set; } = false;
         public int Id { get; private set; } = -1;
         public string Name { 
             get; 
@@ -24,7 +17,7 @@ namespace BudgetWPF.Data.Models
                 if (field != value)
                 {
                     field = value;
-                    IsChanged = true;
+                    OnPropertyChanged("Name");
                 }
             } 
         }
@@ -35,7 +28,7 @@ namespace BudgetWPF.Data.Models
                 if (field != value)
                 {
                     field = value;
-                    IsChanged = true;
+                    OnPropertyChanged("Amount");
                 }
             }
         }
@@ -46,7 +39,7 @@ namespace BudgetWPF.Data.Models
                 if (field != value)
                 {
                     field = value;
-                    IsChanged = true;
+                    OnPropertyChanged("DueDate");
                 }
             }
         }
@@ -57,7 +50,7 @@ namespace BudgetWPF.Data.Models
                 if (field != value)
                 {
                     field = value;
-                    IsChanged = true;
+                    OnPropertyChanged("IsPaid");
                 }
             }
         }
@@ -96,6 +89,11 @@ namespace BudgetWPF.Data.Models
             IsDeleted = true;
         }
 
+        public void TogglePaid()
+        {
+            IsPaid = !IsPaid;
+        }
+
         public override string ToString()
         {
             string result = $"Id: {Id}";
@@ -107,9 +105,11 @@ namespace BudgetWPF.Data.Models
             return result;
         }
 
-        private void OnOneTimeBillModelChanged(EventArgs e)
+        private void OnPropertyChanged(string propertyName)
         {
-            OneTimeBillModelChanged?.Invoke(this, e);
+            IsChanged = true;
+            PropertyChangedEventArgs eventArgs = new(propertyName);
+            PropertyChanged?.Invoke(this, eventArgs);
         }
     }
 }

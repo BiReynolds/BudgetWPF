@@ -212,6 +212,7 @@ namespace BudgetWPF.Data
             command.Parameters.AddWithValue("$id", updatedModel.Id);
 
             command.ExecuteNonQuery();
+            updatedModel.IsChanged = false;
         }
 
         public static void UpdateManyOneTimeBills(IEnumerable<OneTimeBillModel> updatedModels, SqliteConnection connection)
@@ -247,6 +248,7 @@ namespace BudgetWPF.Data
                     isPaidParameter.Value = bill.IsPaid;
                     idParameter.Value = bill.Id;
                     command.ExecuteNonQuery();
+                    bill.IsChanged = false;
                 }
 
                 transaction.Commit();
