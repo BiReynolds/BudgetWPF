@@ -22,6 +22,7 @@ namespace BudgetWPF.Screens.ManageIndividualBillsScreen
     /// </summary>
     public partial class ManageIndividualBillsScreen : UserControl
     {
+        public event EventHandler<OneTimeBillModel>? IndividualBillEdit_Click;
         SqliteConnection Connection = DatabaseHelper.GetReadWriteConnection();
         ObservableCollection<OneTimeBillModel>? IndividualBills { get; set; }
         public ManageIndividualBillsScreen()
@@ -83,7 +84,7 @@ namespace BudgetWPF.Screens.ManageIndividualBillsScreen
             }
             else
             {
-
+                IndividualBillEdit_Click?.Invoke(this, selectedBills[0]);
             }
             IndividualBillsDataGrid.UnselectAll();
         }

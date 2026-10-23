@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BudgetWPF.Screens.EditIndividualBillScreen;
+using BudgetWPF.Data.Models;
 
 namespace BudgetWPF;
 
@@ -29,27 +31,32 @@ public partial class MainWindow : Window
         MainContentContainer.Children.Add(new DashboardScreen());
     }
 
-    private void DashboardButton_Click(object sender, RoutedEventArgs e)
+    private void DashboardButton_Click(object? sender, RoutedEventArgs e)
     {
         ChangeScreen(ScreenEnum.Dashboard);
     }
 
-    private void ManageIndividualBillsButton_Click(object sender, RoutedEventArgs e)
+    private void ManageIndividualBillsButton_Click(object? sender, RoutedEventArgs e)
     {
         ChangeScreen(ScreenEnum.ManageIndividualBills);
     }
 
-    private void ManageRecurringBillsButton_Click(object sender, RoutedEventArgs e)
+    private void ManageRecurringBillsButton_Click(object? sender, RoutedEventArgs e)
     {
         ChangeScreen(ScreenEnum.ManageRecurringBills);
     }
 
-    private void AddBillButton_Click(object sender, RoutedEventArgs e)
+    private void AddBillButton_Click(object? sender, RoutedEventArgs e)
     {
         ChangeScreen(ScreenEnum.AddBillScreen);
     }
 
-    private void ChangeScreen(ScreenEnum nextScreen)
+    private void EditIndividualBill(OneTimeBillModel model)
+    {
+        ChangeScreen(ScreenEnum.EditIndividualBillScreen, model);
+    }
+
+    private void ChangeScreen(ScreenEnum nextScreen, object? screenArgs = null)
     {
         if (CurrentScreen == nextScreen)
         {
@@ -64,7 +71,9 @@ public partial class MainWindow : Window
                 MainContentContainer.Children.Add(new DashboardScreen());
                 break;
             case ScreenEnum.ManageIndividualBills:
-                MainContentContainer.Children.Add(new ManageIndividualBillsScreen());
+                ManageIndividualBillsScreen individualBillsScreen= new();
+                individualBillsScreen.IndividualBillEdit_Click += (o, e) => EditIndividualBill(e);
+                MainContentContainer.Children.Add(individualBillsScreen);
                 break;
             case ScreenEnum.ManageRecurringBills:
                 MainContentContainer.Children.Add(new ManageRecurringBillsScreen());
@@ -72,6 +81,18 @@ public partial class MainWindow : Window
             case ScreenEnum.AddBillScreen:
                 MainContentContainer.Children.Add(new AddBillScreen());
                 break;
+            case ScreenEnum.EditIndividualBillScreen:
+                if (screenArgs != null && screenArgs is OneTimeBillModel editedBill)
+                {
+                    EditIndividualBillScreen newScreen = new EditIndividualBillScreen(editedBill);
+                    newScreen.SuccessfulSubmit += (o, e) => ManageIndividualBillsButton_Click(o, e);
+                    MainContentContainer.Children.Add(newScreen);
+                    break;
+                }
+                else
+                {
+                    throw new Exception($"When changing to Edit Individual Bill screen, you need to pass screenArgs of type OneTimeBillModel");
+                }
             default:
                 throw new Exception($"Screen {nextScreen} is not supported by ChangeScreen method");
         }

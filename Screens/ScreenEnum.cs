@@ -9,6 +9,7 @@ namespace BudgetWPF.Screens
         Dashboard,
         ManageIndividualBills,
         ManageRecurringBills,
-        AddBillScreen
+        AddBillScreen,
+        EditIndividualBillScreen
     }
 }

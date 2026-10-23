@@ -14,11 +14,19 @@
     <Compile Update="Screens\DashboardScreen\DashboardScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Screens\EditBill\EditBillScreen.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Screens\ManageIndividualBillsScreen\ManageIndividualBillsScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Screens\ManageRecurringBillsScreen\ManageRecurringBillsScreen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Screens\EditBill\EditBillScreen.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 </Project>
