@@ -1,22 +1,14 @@
+using System.ComponentModel;
+
 namespace BudgetWPF.Data.Models
 {
-    public class RecurringBillModel
+    public class RecurringBillModel : INotifyPropertyChanged
     {
-        public event EventHandler? RecurringBillChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         public int? Id { get; private set; }
         public bool IsDeleted { get; private set; } = false;
-        public bool IsChanged
-        {
-            get;
-            set
-            {
-                field = value;
-                if (field)
-                {
-                    OnRecurringBillChanged(EventArgs.Empty);
-                }
-            }
-        } = false;
+        public bool IsChanged { get; set; } = false;
         public string Name 
         { 
             get; 
@@ -25,7 +17,7 @@ namespace BudgetWPF.Data.Models
                 if (field != value)
                 {
                     field = value;
-                    IsChanged = true;
+                    OnPropertyChanged("Name");
                 }
             }
         }
@@ -37,7 +29,7 @@ namespace BudgetWPF.Data.Models
                 if (field != value)
                 {
                     field = value;
-                    IsChanged = true;
+                    OnPropertyChanged("Amount");
                 }
             }
         }
@@ -49,7 +41,7 @@ namespace BudgetWPF.Data.Models
                 if (field != value)
                 {
                     field = value;
-                    IsChanged = true;
+                    OnPropertyChanged("StartDate");
                 }
             }
         }
@@ -61,7 +53,7 @@ namespace BudgetWPF.Data.Models
                 if (field != value)
                 {
                     field = value;
-                    IsChanged = true;
+                    OnPropertyChanged("EndDate");
                 }
             }
         }
@@ -73,7 +65,7 @@ namespace BudgetWPF.Data.Models
                 if (field != value)
                 {
                     field = value;
-                    IsChanged = true;
+                    OnPropertyChanged("RecurringType");
                 }
             }
         }
@@ -85,7 +77,7 @@ namespace BudgetWPF.Data.Models
                 if (field != value)
                 {
                     field = value;
-                    IsChanged = true;
+                    OnPropertyChanged("ReferenceDate");
                 }
             }
         }
@@ -127,11 +119,6 @@ namespace BudgetWPF.Data.Models
             RecurringType = recurringType;
             ReferenceDate = referenceDate;
             LastOneTimeDueDateAdded = lastOneTimeDueDateAdded;
-        }
-
-        public void OnRecurringBillChanged(EventArgs e)
-        {
-            RecurringBillChanged?.Invoke(this, e);
         }
 
         public OneTimeBillModel CreateOneTimeBillInstance(DateOnly dueDate)
@@ -229,6 +216,13 @@ namespace BudgetWPF.Data.Models
                 LastOneTimeDueDateAdded = result[^1].DueDate;
             }
             return result;
+        }
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            IsChanged = true;
+            PropertyChangedEventArgs e = new(propertyName);
+            PropertyChanged?.Invoke(this, e);
         }
     }
 

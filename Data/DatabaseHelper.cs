@@ -338,6 +338,24 @@ namespace BudgetWPF.Data
             command.ExecuteNonQuery();
         }
 
+        public static void DeleteRecurringBillAndFutureInstances(RecurringBillModel recurringBill, SqliteConnection connection)
+        {
+            if (recurringBill.Id == null)
+            {
+                throw new Exception("Passed recurringBill with null id");
+            }
+            int recurringBillId = (int)recurringBill.Id;
+            DeleteRecurringBill(recurringBill, connection);
+            SqliteCommand command = connection.CreateCommand();
+            command.CommandText = """
+                DELETE FROM OneTimeBills
+                WHERE ParentId = $recurringId;
+            """;
+            command.Parameters.AddWithValue("$recurringId", recurringBillId);
+
+            command.ExecuteNonQuery();
+        }
+
         public static void UpdateRecurringBill(RecurringBillModel recurringBill, SqliteConnection connection)
         {
             SqliteCommand command = connection.CreateCommand();

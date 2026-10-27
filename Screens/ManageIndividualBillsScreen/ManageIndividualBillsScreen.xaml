@@ -17,11 +17,6 @@
             <ColumnDefinition Width="100"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource HeaderStyle}" Grid.Row="0" Grid.ColumnSpan="2">Individual Bills</TextBlock>
-        <StackPanel Grid.Row="2" Grid.Column="1">
-            <Button Click="TogglePaid_Click">Toggle Paid</Button>
-            <Button Click="Edit_Click">Edit</Button>
-            <Button Click="Delete_Click">Delete</Button>
-        </StackPanel>
         <DataGrid Name="IndividualBillsDataGrid" Grid.Row="2" Grid.Column="0" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Bill" Binding="{Binding Name}" />
@@ -30,5 +25,10 @@
                 <DataGridTextColumn Header="IsPaid" Binding="{Binding IsPaid}" />
             </DataGrid.Columns>
         </DataGrid>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Button Click="TogglePaid_Click">Toggle Paid</Button>
+            <Button Click="Edit_Click">Edit</Button>
+            <Button Click="Delete_Click">Delete</Button>
+        </StackPanel>
     </Grid>
 </UserControl>
