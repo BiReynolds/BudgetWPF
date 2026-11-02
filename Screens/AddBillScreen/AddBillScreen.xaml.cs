@@ -168,6 +168,8 @@ namespace BudgetWPF.Screens.AddBillScreen
             DateOnly startDate = RecurringBillFieldData.GetStartDateSelection() ?? throw new UnexpectedNullInMethodException("CreateRecurringBillFromFieldValues", "startDate");
             DateOnly? endDate = RecurringBillFieldData.GetEndDateSelection();
             
+
+
             switch (recurringType)
             {
                 case RecurringTypeEnum.WEEKLY:
@@ -180,11 +182,11 @@ namespace BudgetWPF.Screens.AddBillScreen
                         DateOnly trueStartDate = DateHelper.GetNextDateOfDayOfWeek(startDate, (DayOfWeek)dayOfWeek);
                         if (endDate == null)
                         {
-                            return new RecurringBillModel(name, amount, trueStartDate, RecurringTypeEnum.MONTHLY);
+                            return new RecurringBillModel(name, amount, trueStartDate, RecurringTypeEnum.WEEKLY);
                         }
                         else 
                         {
-                            return new RecurringBillModel(name, amount, trueStartDate, (DateOnly)endDate, RecurringTypeEnum.MONTHLY);
+                            return new RecurringBillModel(name, amount, trueStartDate, (DateOnly)endDate, RecurringTypeEnum.WEEKLY);
                         }
                     }
                 case RecurringTypeEnum.MONTHLY:
@@ -207,11 +209,11 @@ namespace BudgetWPF.Screens.AddBillScreen
                 default:
                     if (endDate == null)
                     {
-                        return new RecurringBillModel(name, amount, startDate, RecurringTypeEnum.MONTHLY);
+                        return new RecurringBillModel(name, amount, startDate, recurringType);
                     }
                     else 
                     {
-                        return new RecurringBillModel(name, amount, startDate, (DateOnly)endDate, RecurringTypeEnum.MONTHLY);
+                        return new RecurringBillModel(name, amount, startDate, (DateOnly)endDate, recurringType);
                     }
             }
         }

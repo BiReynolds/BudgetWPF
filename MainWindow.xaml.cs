@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BudgetWPF.Screens.EditIndividualBillScreen;
 using BudgetWPF.Data.Models;
+using BudgetWPF.Screens.EditRecurringBillScreen;
 
 namespace BudgetWPF;
 
@@ -56,6 +57,11 @@ public partial class MainWindow : Window
         ChangeScreen(ScreenEnum.EditIndividualBillScreen, model);
     }
 
+    private void EditRecurringBill(RecurringBillModel model)
+    {
+        ChangeScreen(ScreenEnum.EditRecurringBillScreen, model);
+    }
+
     private void ChangeScreen(ScreenEnum nextScreen, object? screenArgs = null)
     {
         if (CurrentScreen == nextScreen)
@@ -76,7 +82,9 @@ public partial class MainWindow : Window
                 MainContentContainer.Children.Add(individualBillsScreen);
                 break;
             case ScreenEnum.ManageRecurringBills:
-                MainContentContainer.Children.Add(new ManageRecurringBillsScreen());
+                ManageRecurringBillsScreen recurringBillsScreen = new();
+                recurringBillsScreen.RecurringBillEdit_Click += (o, e) => EditRecurringBill(e);
+                MainContentContainer.Children.Add(recurringBillsScreen);
                 break;
             case ScreenEnum.AddBillScreen:
                 MainContentContainer.Children.Add(new AddBillScreen());
@@ -91,7 +99,18 @@ public partial class MainWindow : Window
                 }
                 else
                 {
-                    throw new Exception($"When changing to Edit Individual Bill screen, you need to pass screenArgs of type OneTimeBillModel");
+                    throw new Exception($"When changing to Edit Individual Bill screen, you need to pass screenArgs of type OneTimeBillModel - received {screenArgs}");
+                }
+            case ScreenEnum.EditRecurringBillScreen:
+                if (screenArgs != null && screenArgs is RecurringBillModel editedRecurringBill)
+                {
+                    EditRecurringBillScreen newScreen = new EditRecurringBillScreen(editedRecurringBill);
+                    MainContentContainer.Children.Add(newScreen);
+                    break;
+                }
+                else
+                {
+                    throw new Exception($"When changing to Edit Recurring Bill screen, you need to pass screenArgs of type RecurringBillModel - received {screenArgs}");
                 }
             default:
                 throw new Exception($"Screen {nextScreen} is not supported by ChangeScreen method");

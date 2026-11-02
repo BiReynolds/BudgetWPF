@@ -22,6 +22,7 @@ namespace BudgetWPF.Screens.ManageRecurringBillsScreen
     /// </summary>
     public partial class ManageRecurringBillsScreen : UserControl
     {
+        public event EventHandler<RecurringBillModel>? RecurringBillEdit_Click;
         SqliteConnection Connection = DatabaseHelper.GetReadWriteConnection();
         ObservableCollection<RecurringBillModel>? RecurringBills { get; set; }
         public ManageRecurringBillsScreen()
@@ -40,6 +41,20 @@ namespace BudgetWPF.Screens.ManageRecurringBillsScreen
 
         protected void Edit_Click(object sender, RoutedEventArgs e)
         {
+            var selectedBills = GetSelectedRecurringBills();
+            if (selectedBills.Count == 0)
+            {
+                MessageBox.Show("Please select a bill for editing");
+            }
+            else if (selectedBills.Count > 1)
+            {
+                MessageBox.Show("Only one bill can be edited at a time");
+            }
+            else
+            {
+                RecurringBillEdit_Click?.Invoke(this, selectedBills[0]);
+            }
+            RecurringBillsDataGrid.UnselectAll();
 
         }
         

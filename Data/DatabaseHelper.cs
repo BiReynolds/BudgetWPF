@@ -383,6 +383,34 @@ namespace BudgetWPF.Data
             command.ExecuteNonQuery();
         }
 
+        public static DateTime? GetNextDueDateOfRecurringBill(int? recurringBillId, SqliteConnection connection)
+        {
+            if (recurringBillId == null)
+            {
+                return null;
+            }
+
+            SqliteCommand command = connection.CreateCommand();
+            command.CommandText = """
+                SELECT DueDate FROM OneTimeBills
+                WHERE ParentId = $parentId AND IsPaid = 0
+                ORDER BY DueDate
+                LIMIT 1;
+            """;
+
+            command.Parameters.AddWithValue("$parentId", recurringBillId);
+
+            SqliteDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                return reader.GetDateTime(0);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static List<BudgetJobModel> GetAllJobsFromDatabase(SqliteConnection connection)
         {
             SqliteCommand command = connection.CreateCommand();
